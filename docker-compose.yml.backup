@@ -9,9 +9,7 @@ x-logging:
 
 services:
   server:
-    image: binnubunny29/judge0:1.13.1-extra
-    env_file: judge0.conf
-    command: ["./scripts/server"]
+    image: judge0/judge0:latest-extra
     volumes:
       - ./judge0.conf:/judge0.conf:ro
     ports:
@@ -21,8 +19,7 @@ services:
     restart: always
 
   workers:
-    image: binnubunny29/judge0:1.13.1-extra
-    env_file: judge0.conf
+    image: judge0/judge0:latest-extra
     command: ["./scripts/workers"]
     volumes:
       - ./judge0.conf:/judge0.conf:ro
