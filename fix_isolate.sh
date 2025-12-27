@@ -14,7 +14,7 @@ sed -i '/--no-cg-timing/d' /tmp/isolate_job_clean.rb
 ruby -c /tmp/isolate_job_clean.rb
 
 # Copy into running container
-docker cp /tmp/isolate_job_clean.rb judge0_workers_1:/api/app/jobs/isolate_job.rb
+docker cp /tmp/isolate_job_clean.rb judge0-workers-1:/api/app/jobs/isolate_job.rb
 
 echo "Fixed! Restarting workers..."
 docker-compose restart workers
